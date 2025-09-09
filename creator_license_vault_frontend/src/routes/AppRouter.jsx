@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import Landing from '../pages/Landing';
+import Licensing from '../pages/Licensing';
 
 // Simple Dash mock as before
 const Dashboard = () => (
@@ -71,7 +72,7 @@ export default function AppRouter() {
           <Route path="/" element={<Landing />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/verification" element={<Placeholder title="Verification" />} />
-          <Route path="/licensing" element={<Placeholder title="Licensing" />} />
+          <Route path="/licensing" element={<Licensing />} />
           <Route path="/monitoring" element={<Placeholder title="Monitoring" />} />
           <Route path="/notifications" element={<Placeholder title="Notifications" />} />
           <Route path="/settings" element={<Placeholder title="Settings" />} />
