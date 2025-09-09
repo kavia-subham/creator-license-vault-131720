@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
+import Landing from '../pages/Landing';
 
-// Placeholder pages for Phase 1
+// Simple Dash mock as before
 const Dashboard = () => (
   <div className="page">
     <div className="kpis">
@@ -38,6 +39,10 @@ const Dashboard = () => (
         <p className="text-dim">Real-time alerts will appear here.</p>
       </div>
     </div>
+
+    <div style={{marginTop: 8}}>
+      <Link className="btn" to="/">← Back to Landing</Link>
+    </div>
   </div>
 );
 
@@ -46,24 +51,31 @@ const Placeholder = ({ title }) => (
     <div className="card">
       <h2 style={{marginTop: 0}}>{title}</h2>
       <p className="text-dim">Beautiful content coming soon. This page is ready for future feature integration.</p>
+      <div style={{marginTop: 8}}>
+        <Link className="btn" to="/">← Back to Landing</Link>
+      </div>
     </div>
   </div>
 );
 
 // PUBLIC_INTERFACE
 export default function AppRouter() {
-  /** Router composition with MainLayout wrapper and placeholder routes. */
+  /**
+   * Router composition with MainLayout wrapper and routes.
+   * Landing page available on '/' for marketing flow; dashboard on '/dashboard'.
+   */
   return (
     <BrowserRouter>
       <MainLayout>
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/verification" element={<Placeholder title="Verification" />} />
           <Route path="/licensing" element={<Placeholder title="Licensing" />} />
           <Route path="/monitoring" element={<Placeholder title="Monitoring" />} />
           <Route path="/notifications" element={<Placeholder title="Notifications" />} />
           <Route path="/settings" element={<Placeholder title="Settings" />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Placeholder title="Not Found" />} />
         </Routes>
       </MainLayout>
