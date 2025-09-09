@@ -6,6 +6,7 @@ const navItems = [
   { to: '/dashboard', label: 'Dashboard', icon: '📊' },
   { to: '/verification', label: 'Verification', icon: '🧾' },
   { to: '/licensing', label: 'Licensing', icon: '📜' },
+  { to: '/documents', label: 'Documents', icon: '📂' },
   { to: '/monitoring', label: 'Monitoring', icon: '🛰️' },
   { to: '/revenue', label: 'Revenue', icon: '💸' },
   { to: '/notifications', label: 'Notifications', icon: '🔔' },
