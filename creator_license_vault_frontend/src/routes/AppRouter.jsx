@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout';
 import Landing from '../pages/Landing';
 import Licensing from '../pages/Licensing';
 import Verification from '../pages/Verification';
+import Monitoring from '../pages/Monitoring';
 
 // Simple Dash mock as before
 const Dashboard = () => (
@@ -74,7 +75,7 @@ export default function AppRouter() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/verification" element={<Verification />} />
           <Route path="/licensing" element={<Licensing />} />
-          <Route path="/monitoring" element={<Placeholder title="Monitoring" />} />
+          <Route path="/monitoring" element={<Monitoring />} />
           <Route path="/notifications" element={<Placeholder title="Notifications" />} />
           <Route path="/settings" element={<Placeholder title="Settings" />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
